@@ -1,0 +1,73 @@
+/* "Episode XII" — a galactic skin: deep space with a planet's rim and drifting stars
+   (fx: stars), desert-planet slides under two suns, and an opening text crawl.
+   Original artwork and wording — no logos, characters or film assets. */
+:root[data-theme="starwars"] {
+  --space: #02030a;
+  --yellow: #ffe81f;
+  --holo: #4bd5ee;
+  --sand: #e8d6aa;
+  --dune: #cfae6e;
+  --rust: #9a3f17;
+  --night: #1a1006;
+}
+
+[data-theme="starwars"] body { background: var(--space); color: #f2f2f2; }
+
+/* Dark slides: see-through over the star canvas, with the edge of a planet in the corner */
+[data-theme="starwars"] #fx { z-index: 0; }                         /* stars sit under the slides… */
+[data-theme="starwars"] #deck { z-index: 1; }
+[data-theme="starwars"] .slide {
+  --fg: #f2f2f2; --bg: transparent;                                   /* …and show through dark ones */
+  --muted: rgba(242, 242, 242, .58); --rule: rgba(255, 232, 31, .2); --bar-dim: rgba(242, 242, 242, .3);
+  --accent: var(--yellow);
+  background: radial-gradient(circle at 112% 140%, #14233f 0 42vmax, rgba(75,213,238,.55) 42.2vmax, rgba(75,213,238,.08) 43vmax, transparent 47vmax);
+}
+
+/* Light slides: a desert planet under two suns */
+[data-theme="starwars"] .slide.light {
+  --fg: var(--night); --bg: var(--sand);
+  --muted: rgba(26, 16, 6, .62); --rule: rgba(26, 16, 6, .2); --bar-dim: rgba(26, 16, 6, .24);
+  --accent: var(--rust);
+  background:
+    radial-gradient(circle at 82% 17%, #fff8e2 0 3.4vmin, rgba(255,248,226,.35) 3.6vmin, transparent 8vmin),
+    radial-gradient(circle at 89% 25%, #ffe6ad 0 2.3vmin, rgba(255,230,173,.3) 2.5vmin, transparent 6vmin),
+    radial-gradient(ellipse 70vw 16vh at 22% 106%, var(--dune) 97%, transparent 100%),
+    radial-gradient(ellipse 60vw 13vh at 84% 108%, #d9bd84 97%, transparent 100%),
+    linear-gradient(#f1e3bf, var(--sand) 60%);
+}
+
+/* Type: a wide, outlined title in star-yellow */
+[data-theme="starwars"] .mega { letter-spacing: .08em; }
+[data-theme="starwars"] .title .mega { color: transparent; -webkit-text-stroke: 2px var(--yellow); }
+[data-theme="starwars"] .kicker { color: var(--accent); letter-spacing: .24em; }
+[data-theme="starwars"] .rank { color: var(--accent); }
+[data-theme="starwars"] .chart .fill { border-radius: 0 2px 2px 0; box-shadow: 0 0 10px -2px var(--accent); }
+[data-theme="starwars"] .slide.light .chart .fill { box-shadow: none; }
+
+/* ---------- opening crawl ---------- */
+.intro-crawl { background: var(--space); color: var(--yellow); }
+.crawl-prelude {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0;
+  width: min(88vw, 860px); text-align: center; opacity: 0;
+  color: var(--holo); font-size: clamp(20px, 2.6vw, 38px); line-height: 1.3;
+}
+.crawl-title {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(2.6); margin: 0;
+  opacity: 0; white-space: nowrap; text-align: center; text-transform: uppercase;
+  font-size: clamp(60px, 12vw, 200px); line-height: .86; letter-spacing: .08em; font-weight: 400;
+  color: transparent; -webkit-text-stroke: 2px var(--yellow);
+}
+.crawl-stage { position: absolute; inset: 0; perspective: 320px; perspective-origin: 50% 30%; overflow: hidden; }
+.crawl-text {
+  position: absolute; left: 50%; top: 100%; width: min(82vw, 720px); margin-left: calc(min(82vw, 720px) / -2);
+  transform-origin: 50% 0; transform: rotateX(26deg);
+  font-size: clamp(22px, 3.1vw, 46px); line-height: 1.35; text-align: justify; hyphens: auto;
+}
+.crawl-text .crawl-ep, .crawl-text h2 { text-align: center; text-transform: uppercase; letter-spacing: .1em; margin: 0; }
+.crawl-text .crawl-ep { font-size: .8em; }
+.crawl-text h2 { font-size: 1.5em; margin: .1em 0 .9em; }
+.crawl-text p { margin: 0 0 1em; }
+.crawl-skip {
+  position: absolute; left: 0; right: 0; bottom: 18px; margin: 0; text-align: center; z-index: 2;
+  font: 500 11px var(--font-b); letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.4);
+}

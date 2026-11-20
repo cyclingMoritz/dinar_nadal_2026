@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" fill="none">
+  <!-- Original artwork: a rolling hill whose crest curls into a spiral, a crooked fence and a few stars. -->
+  <path d="M0 420 L0 352 C 160 330 300 300 420 300 C 520 300 600 330 700 360 C 800 388 900 395 1000 392 L1000 420 Z" fill="#1c1528"/>
+  <path d="M520 304 C 528 250 560 205 598 168 C 640 128 662 82 640 52 C 618 22 572 30 566 64 C 561 92 590 108 610 94 C 626 82 620 60 604 60"
+        stroke="#f3eed9" stroke-opacity=".45" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <g stroke="#f3eed9" stroke-opacity=".32" stroke-width="3" stroke-linecap="round">
+    <path d="M760 372 L756 336"/><path d="M786 378 L790 340"/><path d="M812 383 L806 348"/><path d="M838 386 L843 352"/><path d="M864 389 L859 356"/>
+    <path d="M748 352 C 790 346 830 356 872 366"/>
+  </g>
+  <g fill="#f3eed9" fill-opacity=".5">
+    <path d="M220 120 l4 10 l10 2 l-8 7 l2 10 l-8 -5 l-9 5 l2 -10 l-7 -7 l10 -2 z"/>
+    <path d="M400 70 l2.5 6 l6 1 l-4.5 4 l1 6 l-5 -3 l-5 3 l1 -6 l-4.5 -4 l6 -1 z"/>
+    <path d="M880 150 l3 7 l7 1.5 l-5.5 5 l1.5 7 l-6 -3.5 l-6 3.5 l1.5 -7 l-5.5 -5 l7 -1.5 z"/>
+  </g>
+</svg>

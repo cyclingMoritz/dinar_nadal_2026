@@ -33,8 +33,7 @@ a { color: inherit; text-underline-offset: .18em; text-decoration-thickness: 1px
   display: flex; justify-content: space-between; gap: 1rem;
   padding: 14px var(--pad);
   font: 500 11px/1 var(--font-b); text-transform: uppercase; letter-spacing: .06em;
-  color: var(--fg); mix-blend-mode: difference; /* stays legible on black and white slides */
-  color: var(--white);
+  color: var(--white); mix-blend-mode: difference; /* stays legible on black and white slides */
   pointer-events: none;
 }
 .controls {
@@ -81,6 +80,8 @@ h2 { font-size: clamp(32px, min(5.2vw, 8vh), 76px); line-height: 1.02; margin-bo
 .small { font-size: 15px; line-height: 1.4; color: var(--muted); }
 .mono { font-family: var(--font-b); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
 .centered { text-align: center; align-items: center; }
+.centered .lede { margin-inline: auto; }
+.sub { margin: -.4em 0 1.2em; }
 
 /* ---------- conclusions grid ---------- */
 .facts {
@@ -107,7 +108,7 @@ h2 { font-size: clamp(32px, min(5.2vw, 8vh), 76px); line-height: 1.02; margin-bo
   background: var(--bar-dim); border-radius: 0 4px 4px 0;
   transition: width .9s cubic-bezier(.2,.7,.2,1);
 }
-.chart li.top .fill { background: var(--fg); }
+.chart li.top .fill { background: var(--accent, var(--fg)); }
 .chart .value { font: 500 13px var(--font-b); text-align: right; }
 .chart li:hover .label, .chart li:focus-visible .label { text-decoration: underline; text-underline-offset: .2em; }
 .chart li:focus-visible { outline: 1px dashed var(--fg); outline-offset: 2px; }
@@ -127,13 +128,8 @@ h2 { font-size: clamp(32px, min(5.2vw, 8vh), 76px); line-height: 1.02; margin-bo
 .resto .meta { font: 11px/1.5 var(--font-b); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .resto .row { font-size: 15px; line-height: 1.3; }
 .resto .flag { font: 11px/1.4 var(--font-b); color: var(--muted); }
-.resto .score { font: 500 11px var(--font-b); letter-spacing: .05em; }
 .rank { font: 500 11px var(--font-b); color: var(--muted); }
 
-.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--rule); }
-.steps li { counter-increment: s; display: grid; grid-template-columns: 3.2em 1fr; padding: .8rem 1.2rem .9rem 0; border-bottom: 1px solid var(--rule); font-size: clamp(19px, 1.8vw, 26px); line-height: 1.25; }
-.steps li::before { content: counter(s, decimal-leading-zero); font: 500 12px/2.2 var(--font-b); color: var(--muted); }
-.steps li span { display: block; font-size: 16px; color: var(--muted); margin-top: .2em; }
 
 /* ---------- intro ----------
    Same choreography as the site's <b-loader>: a white field with the name;
@@ -167,11 +163,11 @@ h2 { font-size: clamp(32px, min(5.2vw, 8vh), 76px); line-height: 1.02; margin-bo
 .intro-gallery i:nth-child(3n+2) { background: transparent; color: var(--white); outline: 1px solid var(--white); outline-offset: -1px; }
 #intro.gone { display: none; }
 
+/* Theme canvas effect (fx.js): above slides, under the chrome */
+#fx { position: fixed; inset: 0; z-index: 15; pointer-events: none; }
+
 .noscript { position: fixed; inset: 40% 0 auto; text-align: center; }
 
-@media (min-width: 900px) {
-  .steps { display: grid; grid-template-columns: 1fr 1fr; }
-}
 @media (max-width: 760px) {
   .bar-mid { display: none; }
   .intro-gallery { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 1fr); --tile: 8vw; }
@@ -181,5 +177,5 @@ h2 { font-size: clamp(32px, min(5.2vw, 8vh), 76px); line-height: 1.02; margin-bo
 }
 @media (prefers-reduced-motion: reduce) {
   .slide, .chart .fill { transition: none; }
-  #intro { display: none; }
+  #intro, #fx { display: none; }
 }

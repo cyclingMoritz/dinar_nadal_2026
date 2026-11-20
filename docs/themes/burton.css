@@ -1,0 +1,62 @@
+/* "Halloween is over" — a gothic-whimsical skin over the lab deck.
+   Same fonts, layout and structure; new palette, crooked type, spiral hills,
+   a moon, pinstripes and snow. Original artwork — no film characters or logos. */
+:root[data-theme="burton"] {
+  --ink: #0e0a16;      /* midnight violet-black */
+  --bone: #ebe4d2;     /* old paper */
+  --moon: #f3eed9;
+  --pumpkin: #e0742b;
+  --holly: #a3201f;
+  --hill: #1c1528;
+}
+
+[data-theme="burton"] body { background: var(--ink); color: var(--moon); }
+
+/* Dark slides: midnight + moon + spiral hill */
+[data-theme="burton"] .slide {
+  --fg: var(--moon); --bg: var(--ink);
+  --muted: rgba(243, 238, 217, .58); --rule: rgba(243, 238, 217, .2); --bar-dim: rgba(243, 238, 217, .34);
+  --accent: var(--pumpkin);
+  background:
+    radial-gradient(circle at 86% 16%, rgba(243,238,217,.95) 0 5.2vmin, rgba(243,238,217,.16) 5.4vmin, transparent 13vmin),
+    url("hill.svg") right -3vw bottom -2px / min(48vw, 640px) auto no-repeat,
+    var(--ink);
+}
+/* Light slides: old paper with pinstripes */
+[data-theme="burton"] .slide.light {
+  --fg: var(--ink); --bg: var(--bone);
+  --muted: rgba(14, 10, 22, .58); --rule: rgba(14, 10, 22, .18); --bar-dim: rgba(14, 10, 22, .26);
+  --accent: var(--holly);
+  background:
+    repeating-linear-gradient(90deg, rgba(14,10,22,.05) 0 1px, transparent 1px 16px),
+    var(--bone);
+}
+
+/* Crooked, hand-set feeling */
+[data-theme="burton"] .mega { transform: rotate(-2deg); transform-origin: left bottom; letter-spacing: .03em; }
+[data-theme="burton"] .centered .mega { transform-origin: center; transform: rotate(-1.5deg); }
+[data-theme="burton"] h2 { transform: rotate(-.6deg); transform-origin: left center; }
+[data-theme="burton"] .kicker { color: var(--accent); }
+[data-theme="burton"] .fact .big { transform: rotate(-.8deg); transform-origin: left center; }
+
+/* Charts: leading bars take the accent (pumpkin at night, holly red on paper) */
+[data-theme="burton"] .chart li.top .fill { background: var(--accent); }
+[data-theme="burton"] .chart .fill { border-radius: 0 999px 999px 0; }
+
+/* Shortlist cards */
+[data-theme="burton"] .resto h3 a { text-decoration-style: wavy; text-decoration-thickness: 1px; text-underline-offset: .25em; }
+[data-theme="burton"] .rank { color: var(--accent); }
+
+/* Chrome */
+[data-theme="burton"] .controls button { border-radius: 50%; }
+
+/* Snow: difference blend keeps it visible on paper too */
+[data-theme="burton"] #fx { mix-blend-mode: difference; }
+
+/* Intro: same choreography as the lab site, on old paper with moon-coloured tiles */
+[data-theme="burton"] #intro { background: var(--ink); }
+[data-theme="burton"] .intro-text { background: var(--bone); color: var(--ink); box-shadow: 0 0 0 100vmax var(--bone); }
+[data-theme="burton"] .intro-text p { transform: rotate(-2deg); }
+[data-theme="burton"] .intro-gallery i { background: var(--moon); color: var(--ink); border-radius: 50%; }
+[data-theme="burton"] .intro-gallery i:nth-child(3n+2) { background: transparent; color: var(--pumpkin); outline-color: var(--pumpkin); }
+

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Original artwork: a detective's magnifying glass. -->
+  <circle cx="82" cy="82" r="56" stroke="#f3b3cb" stroke-opacity=".55" stroke-width="9"/>
+  <circle cx="82" cy="82" r="44" fill="#f3b3cb" fill-opacity=".06"/>
+  <path d="M60 56 A 34 34 0 0 1 98 50" stroke="#fff3f8" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+  <path d="M124 124 L178 178" stroke="#e2337f" stroke-opacity=".75" stroke-width="16" stroke-linecap="round"/>
+</svg>
