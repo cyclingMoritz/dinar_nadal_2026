@@ -3,9 +3,12 @@
      intro: "dive" (lab-site loader) | "crawl" (opening text crawl) | null
      fx:    "snow" | "stars" | "paws" | null   (canvas effect from fx.js)
      tiles: 12 short labels for the dive intro's tile burst */
+/* The event's name, in one place (title lines, English name, year). */
+window.DECK_EVENT = { title: ["Dinar", "de Nadal"], en: "Christmas lunch", year: 2026 };
+
 window.DECK_THEMES = {
   lab: {
-    bar: "Dinar de Nadal 2026",
+    bar: "",
     kicker: "",
     lede: "What the team asked for, what it means, and where we could go.",
     thanks: "for your time.",
@@ -14,7 +17,7 @@ window.DECK_THEMES = {
   },
 
   burton: {
-    bar: "Dinar de Nadal 2026 · Halloween is over",
+    bar: "Halloween is over",
     kicker: "Halloween is over",
     lede: "The pumpkins are packed away. Here’s what the team asked for, and where we could go.",
     thanks: "for your time. Halloween is over — see you at lunch.",
@@ -23,16 +26,16 @@ window.DECK_THEMES = {
   },
 
   pinkpanther: {
-    bar: "Dinar de Nadal 2026 · Case file Nº 12",
+    bar: "Case file Nº 12",
     kicker: "The case of the Christmas lunch",
-    lede: "Fifteen witnesses, one survey. Here’s what they told us, and where the trail leads.",
+    lede: "The witnesses have spoken. Here’s what they told us, and where the trail leads.",
     thanks: "for your time. Case closed.",
     intro: "dive", fx: "paws",
     tiles: ["?", "Nº12", "CASE", "XII", "", "03", "✳", "", "15", "€", "?", "BCN"],
   },
 
   starwars: {
-    bar: "Dinar de Nadal 2026 · Episode XII",
+    bar: "Episode XII",
     kicker: "Episode XII",
     lede: "The team has spoken. Here’s what they asked for, and where we could go.",
     thanks: "for your time. May the menu be with you.",

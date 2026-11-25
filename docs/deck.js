@@ -10,6 +10,9 @@
   const T = (window.DECK_THEMES || {})[THEME_ID] || (window.DECK_THEMES || {}).lab || {};
   const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const params = new URLSearchParams(location.search);
+  const EV = window.DECK_EVENT || { title: ["Dinar", "de Nadal"], en: "Christmas lunch", year: 2026 };
+  const EVENT = `${EV.title.join(" ")} ${EV.year}`;
+  const megaTitle = () => EV.title.map(esc).join("<br>");
 
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const pct = (x) => `${Math.round(x * 100)}%`;
@@ -25,12 +28,13 @@
       <div class="intro-gallery">${(T.tiles || []).map((t) => `<i>${esc(t)}</i>`).join("")}</div>`,
     crawl: () => `<p class="crawl-skip">Click or press any key to skip</p>`, // filled once data arrives
   };
+  document.title = T.bar ? `${EVENT} · ${T.bar}` : EVENT;
   document.body.insertAdjacentHTML("afterbegin", `
     ${T.intro && introHTML[T.intro] ? `<div id="intro" class="intro-${T.intro}" aria-hidden="true">${introHTML[T.intro]()}</div>` : ""}
     ${T.fx ? `<canvas id="fx" aria-hidden="true"></canvas>` : ""}
     <header class="bar">
       <span>Creative Intelligence Lab</span>
-      <span class="bar-mid">${esc(T.bar)}</span>
+      <span class="bar-mid">${esc(T.bar ? `${EVENT} · ${T.bar}` : EVENT)}</span>
       <span id="counter">01 / 01</span>
     </header>
     <main id="deck" aria-live="polite"></main>
@@ -68,7 +72,7 @@
       { cls: "title", html: `
         <div class="inner">
           <p class="kicker">${T.kicker ? `${esc(T.kicker)} · ` : ""}Survey results · ${n} responses</p>
-          <h1 class="mega">Dinar<br>de Nadal</h1>
+          <h1 class="mega">${megaTitle()}</h1>
           <p class="lede">${esc(T.lede)}</p>
         </div>` },
 
@@ -123,10 +127,10 @@
         <div class="inner">
           <p class="kicker">06 — Where we could go</p>
           <h2>Restaurant shortlist.</h2>
-          <p class="small sub">Central Barcelona · accepts Ticket Restaurant (Edenred) · offers group menus.</p>
-          <div class="shortlist">${R.slice(0, 8).map((r, i) => `
+          <p class="small sub">Central Barcelona · accepts Ticket Restaurant (Edenred) · offers group menus. Team picks come from colleagues’ recommendations.</p>
+          <div class="shortlist">${R.map((r, i) => ({ r, i })).filter(({ r, i }) => i < 8 || r.team_pick).map(({ r, i }) => `
             <article class="resto">
-              <span class="rank">${String(i + 1).padStart(2, "0")} · fit ${r.score}/100</span>
+              <span class="rank">${String(i + 1).padStart(2, "0")} · fit ${r.score}/100${r.team_pick ? ` · <b class="pick">Team pick</b>` : ""}</span>
               <h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.name)}</a></h3>
               <span class="meta">${esc(r.style)} · ${esc(r.area)}</span>
               <span class="row">~€${r.avg_price} avg · ${esc(r.group_room)}</span>
@@ -287,7 +291,7 @@
     const k = T.crawl(data);
     intro.insertAdjacentHTML("beforeend", `
       <p class="crawl-prelude">${esc(k.prelude)}</p>
-      <h1 class="crawl-title">Dinar<br>de Nadal</h1>
+      <h1 class="crawl-title">${megaTitle()}</h1>
       <div class="crawl-stage"><div class="crawl-text">
         <p class="crawl-ep">${esc(k.episode)}</p><h2>${esc(k.title)}</h2>
         ${k.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("")}

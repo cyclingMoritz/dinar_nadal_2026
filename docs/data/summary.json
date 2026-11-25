@@ -1,31 +1,31 @@
 {
-  "generated": "2026-11-20",
-  "responses": 15,
+  "generated": "2026-11-25",
+  "responses": 17,
   "dates": [
     {
       "label": "Thursday 3 December",
       "iso": "2026-12-03",
-      "count": 13,
-      "share": 0.8666666666666667
+      "count": 14,
+      "share": 0.8235294117647058
     },
     {
       "label": "Thursday 17 December",
       "iso": "2026-12-17",
-      "count": 10,
-      "share": 0.6666666666666666
+      "count": 11,
+      "share": 0.6470588235294118
     },
     {
       "label": "Thursday 10 December",
       "iso": "2026-12-10",
       "count": 8,
-      "share": 0.5333333333333333
+      "share": 0.47058823529411764
     }
   ],
   "food": [
     {
       "label": "Traditional Catalan",
-      "mentions": 10,
-      "weighted": 3.25
+      "mentions": 12,
+      "weighted": 4.75
     },
     {
       "label": "Asian",
@@ -33,14 +33,14 @@
       "weighted": 2.92
     },
     {
+      "label": "Mediterranean",
+      "mentions": 8,
+      "weighted": 2.25
+    },
+    {
       "label": "Italian",
       "mentions": 7,
       "weighted": 1.92
-    },
-    {
-      "label": "Mediterranean",
-      "mentions": 7,
-      "weighted": 1.75
     },
     {
       "label": "Tapas or sharing plates",
@@ -58,7 +58,7 @@
   "budget": [
     {
       "label": "Up to €20",
-      "count": 5
+      "count": 7
     },
     {
       "label": "20–30 €",
@@ -72,34 +72,34 @@
   "price_acceptance": [
     {
       "price": 20,
-      "ok": 15,
+      "ok": 17,
       "share": 1.0
     },
     {
       "price": 25,
       "ok": 10,
-      "share": 0.6666666666666666
+      "share": 0.5882352941176471
     },
     {
       "price": 30,
       "ok": 10,
-      "share": 0.6666666666666666
+      "share": 0.5882352941176471
     },
     {
       "price": 35,
       "ok": 3,
-      "share": 0.2
+      "share": 0.17647058823529413
     },
     {
       "price": 40,
       "ok": 3,
-      "share": 0.2
+      "share": 0.17647058823529413
     }
   ],
   "area": [
     {
       "label": "Central Barcelona",
-      "count": 11
+      "count": 13
     },
     {
       "label": "Near the office",
@@ -110,7 +110,7 @@
   "diet": [
     {
       "label": "No restrictions",
-      "count": 13
+      "count": 15
     },
     {
       "label": "No pork",
@@ -118,14 +118,14 @@
     }
   ],
   "allergies": 0,
-  "free_text_reviewed": 1,
+  "free_text_reviewed": 2,
   "conclusions": {
     "date": "Thursday 3 December",
     "date_iso": "2026-12-03",
-    "date_count": 13,
-    "date_missing": 2,
+    "date_count": 14,
+    "date_missing": 3,
     "date_alternative": "Thursday 17 December",
-    "date_alternative_covers_missing": 2,
+    "date_alternative_covers_missing": 3,
     "food": [
       "Traditional Catalan",
       "Asian"
@@ -133,7 +133,7 @@
     "price_everyone": 20,
     "price_majority": 30,
     "area": "Central Barcelona",
-    "group_size": "15–20",
+    "group_size": "17–20",
     "restrictions": [
       {
         "label": "No pork",
@@ -145,6 +145,29 @@
     "source": "https://www.bcnrestaurantes.com/restaurantes-barcelona.asp?lista=aceptan-ticket-restaurant,menu-para-grupos",
     "checked": "2026-11-20",
     "items": [
+      {
+        "name": "Guixot",
+        "cuisine": [
+          "Traditional Catalan"
+        ],
+        "style": "Traditional Catalan, home cooking",
+        "area": "Raval · by Sant Antoni",
+        "central": true,
+        "address": "Carrer de la Riereta, 8",
+        "phone": "933 299 553",
+        "avg_price": 18,
+        "group_room": "Takes groups; size not listed",
+        "max_group": null,
+        "url": "https://maps.google.com/?q=Restaurant+Guixot,+Carrer+de+la+Riereta,+8,+08001+Barcelona",
+        "notes": "Team pick. Accepts Edenred (confirmed by a colleague). Popular menú del día — book early.",
+        "team_pick": true,
+        "edenred": "team-confirmed",
+        "fits_group": true,
+        "group_confirm": true,
+        "food_fit": 1.0,
+        "budget_fit": 1.0,
+        "score": 100
+      },
       {
         "name": "Mussol Casp",
         "cuisine": [
@@ -160,6 +183,7 @@
         "max_group": null,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=mussol-casp",
         "notes": "Cheapest Catalan option. Phone not listed — book via mussolrestaurant.cat.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": true,
         "food_fit": 1.0,
@@ -182,32 +206,12 @@
         "max_group": null,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=montana",
         "notes": "Capacity for 15–20 to confirm.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": true,
         "food_fit": 1.0,
         "budget_fit": 1.0,
         "score": 100
-      },
-      {
-        "name": "Bun Bo Viêtnam",
-        "cuisine": [
-          "Asian"
-        ],
-        "style": "Vietnamese",
-        "area": "Gòtic · by the Cathedral",
-        "central": true,
-        "address": "Carrer dels Sagristans, 3",
-        "phone": "933 011 378",
-        "avg_price": 15,
-        "group_room": "Large room, 60 pax",
-        "max_group": 60,
-        "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bun-bo-vietnam",
-        "notes": "A guide says they don't take reservations — ask about groups specifically.",
-        "fits_group": true,
-        "group_confirm": false,
-        "food_fit": 0.9,
-        "budget_fit": 1.0,
-        "score": 95
       },
       {
         "name": "Julivert Meu",
@@ -224,11 +228,12 @@
         "max_group": 50,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=julivert-meu",
         "notes": "Some listings give other addresses — confirm location.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
         "food_fit": 1.0,
-        "budget_fit": 0.67,
-        "score": 88
+        "budget_fit": 0.59,
+        "score": 86
       },
       {
         "name": "El Caliu de l'Eixample",
@@ -245,11 +250,12 @@
         "max_group": 55,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=caliu-de-l-eixample",
         "notes": "",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
         "food_fit": 1.0,
-        "budget_fit": 0.67,
-        "score": 88
+        "budget_fit": 0.59,
+        "score": 86
       },
       {
         "name": "Ponsa",
@@ -266,32 +272,58 @@
         "max_group": 30,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=ponsa",
         "notes": "Most 'classic Catalan' of the list, slightly above budget.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
         "food_fit": 1.0,
-        "budget_fit": 0.67,
-        "score": 88
+        "budget_fit": 0.59,
+        "score": 86
       },
       {
-        "name": "Bollywood",
+        "name": "Bun Bo Viêtnam",
         "cuisine": [
           "Asian"
         ],
-        "style": "Indian",
-        "area": "Raval · Drassanes",
+        "style": "Vietnamese",
+        "area": "Gòtic · by the Cathedral",
         "central": true,
-        "address": "Av. de les Drassanes, 27",
-        "phone": "935 181 889",
-        "avg_price": 23,
-        "group_room": "Room of 26 pax",
-        "max_group": 98,
-        "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bollywood",
-        "notes": "Lots of pork-free dishes by default.",
+        "address": "Carrer dels Sagristans, 3",
+        "phone": "933 011 378",
+        "avg_price": 15,
+        "group_room": "Large room, 60 pax",
+        "max_group": 60,
+        "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bun-bo-vietnam",
+        "notes": "A guide says they don't take reservations — ask about groups specifically.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
-        "food_fit": 0.9,
-        "budget_fit": 0.67,
-        "score": 83
+        "food_fit": 0.61,
+        "budget_fit": 1.0,
+        "score": 81
+      },
+      {
+        "name": "La Monroe",
+        "cuisine": [
+          "Tapas or sharing plates",
+          "Mediterranean"
+        ],
+        "style": "Tapas, international",
+        "area": "Raval · Filmoteca",
+        "central": true,
+        "address": "Plaça de Salvador Seguí, 1-9",
+        "phone": "934 419 461",
+        "avg_price": 20,
+        "group_room": "Used to group menus; size not listed",
+        "max_group": null,
+        "url": "https://maps.google.com/?q=La+Monroe,+Plaça+de+Salvador+Seguí,+1-9,+08001+Barcelona",
+        "notes": "Team pick. Lunch menu reported around €16 with drink. Edenred to confirm.",
+        "team_pick": true,
+        "edenred": "to confirm",
+        "fits_group": true,
+        "group_confirm": true,
+        "food_fit": 0.47,
+        "budget_fit": 1.0,
+        "score": 74
       },
       {
         "name": "Avinyó 10",
@@ -309,11 +341,34 @@
         "max_group": 80,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=avinyo-10",
         "notes": "Set menu with shared starters + paella reported by diners.",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
-        "food_fit": 0.54,
+        "food_fit": 0.47,
         "budget_fit": 1.0,
-        "score": 77
+        "score": 74
+      },
+      {
+        "name": "Bollywood",
+        "cuisine": [
+          "Asian"
+        ],
+        "style": "Indian",
+        "area": "Raval · Drassanes",
+        "central": true,
+        "address": "Av. de les Drassanes, 27",
+        "phone": "935 181 889",
+        "avg_price": 23,
+        "group_room": "Room of 26 pax",
+        "max_group": 98,
+        "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bollywood",
+        "notes": "Lots of pork-free dishes by default.",
+        "edenred": "directory",
+        "fits_group": true,
+        "group_confirm": false,
+        "food_fit": 0.61,
+        "budget_fit": 0.59,
+        "score": 66
       },
       {
         "name": "Melic del Gòtic",
@@ -330,11 +385,12 @@
         "max_group": 40,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=melic-del-gotic",
         "notes": "",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
-        "food_fit": 0.54,
-        "budget_fit": 0.67,
-        "score": 65
+        "food_fit": 0.47,
+        "budget_fit": 0.59,
+        "score": 59
       },
       {
         "name": "Taller de Tapas",
@@ -352,11 +408,12 @@
         "max_group": 60,
         "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=taller-de-tapas-rambla",
         "notes": "",
+        "edenred": "directory",
         "fits_group": true,
         "group_confirm": false,
-        "food_fit": 0.54,
-        "budget_fit": 0.67,
-        "score": 65
+        "food_fit": 0.47,
+        "budget_fit": 0.59,
+        "score": 59
       }
     ]
   }

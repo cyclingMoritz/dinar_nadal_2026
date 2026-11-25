@@ -1,11 +1,50 @@
 {
-  "_about": "Hand-curated candidates. 'ticket_restaurant' and 'group_menu' come from the bcnrestaurantes.com filters 'Acepta Ticket Restaurant' + 'Menú para grupos' (checked 2026-11-20). 'avg_price' is the directory's average à-la-carte price, NOT a group-menu quote. Every field marked confirm=true still needs a phone call.",
+  "_about": "Hand-curated candidates. 'ticket_restaurant' and 'group_menu' come from the bcnrestaurantes.com filters 'Acepta Ticket Restaurant' + 'Menú para grupos' (checked 2026-11-20). 'avg_price' is the directory's average à-la-carte price, NOT a group-menu quote. Every field marked confirm=true still needs a phone call. Entries with team_pick=true were recommended by a colleague (not from the directory); their 'edenred' field says how acceptance is known.",
   "source": "https://www.bcnrestaurantes.com/restaurantes-barcelona.asp?lista=aceptan-ticket-restaurant,menu-para-grupos",
   "checked": "2026-11-20",
   "restaurants": [
     {
+      "name": "Guixot",
+      "cuisine": [
+        "Traditional Catalan"
+      ],
+      "style": "Traditional Catalan, home cooking",
+      "area": "Raval · by Sant Antoni",
+      "central": true,
+      "address": "Carrer de la Riereta, 8",
+      "phone": "933 299 553",
+      "avg_price": 18,
+      "group_room": "Takes groups; size not listed",
+      "max_group": null,
+      "url": "https://maps.google.com/?q=Restaurant+Guixot,+Carrer+de+la+Riereta,+8,+08001+Barcelona",
+      "notes": "Team pick. Accepts Edenred (confirmed by a colleague). Popular menú del día — book early.",
+      "team_pick": true,
+      "edenred": "team-confirmed"
+    },
+    {
+      "name": "La Monroe",
+      "cuisine": [
+        "Tapas or sharing plates",
+        "Mediterranean"
+      ],
+      "style": "Tapas, international",
+      "area": "Raval · Filmoteca",
+      "central": true,
+      "address": "Plaça de Salvador Seguí, 1-9",
+      "phone": "934 419 461",
+      "avg_price": 20,
+      "group_room": "Used to group menus; size not listed",
+      "max_group": null,
+      "url": "https://maps.google.com/?q=La+Monroe,+Plaça+de+Salvador+Seguí,+1-9,+08001+Barcelona",
+      "notes": "Team pick. Lunch menu reported around €16 with drink. Edenred to confirm.",
+      "team_pick": true,
+      "edenred": "to confirm"
+    },
+    {
       "name": "Julivert Meu",
-      "cuisine": ["Traditional Catalan"],
+      "cuisine": [
+        "Traditional Catalan"
+      ],
       "style": "Catalan grill, market cooking",
       "area": "Raval · by La Rambla",
       "central": true,
@@ -15,11 +54,14 @@
       "group_room": "Private rooms of 20 / 28 / 28 pax",
       "max_group": 50,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=julivert-meu",
-      "notes": "Some listings give other addresses — confirm location."
+      "notes": "Some listings give other addresses — confirm location.",
+      "edenred": "directory"
     },
     {
       "name": "Mussol Casp",
-      "cuisine": ["Traditional Catalan"],
+      "cuisine": [
+        "Traditional Catalan"
+      ],
       "style": "Catalan grill, calçots, snails",
       "area": "Eixample · by Pl. Catalunya",
       "central": true,
@@ -29,11 +71,15 @@
       "group_room": "Group menus; large dining room",
       "max_group": null,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=mussol-casp",
-      "notes": "Cheapest Catalan option. Phone not listed — book via mussolrestaurant.cat."
+      "notes": "Cheapest Catalan option. Phone not listed — book via mussolrestaurant.cat.",
+      "edenred": "directory"
     },
     {
       "name": "Montana",
-      "cuisine": ["Traditional Catalan", "Mediterranean"],
+      "cuisine": [
+        "Traditional Catalan",
+        "Mediterranean"
+      ],
       "style": "Catalan & market cooking",
       "area": "Born",
       "central": true,
@@ -43,11 +89,15 @@
       "group_room": "Group menu; room size not listed",
       "max_group": null,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=montana",
-      "notes": "Capacity for 15–20 to confirm."
+      "notes": "Capacity for 15–20 to confirm.",
+      "edenred": "directory"
     },
     {
       "name": "Avinyó 10",
-      "cuisine": ["Mediterranean", "Tapas or sharing plates"],
+      "cuisine": [
+        "Mediterranean",
+        "Tapas or sharing plates"
+      ],
       "style": "Rice dishes, tapas, pizza",
       "area": "Gòtic",
       "central": true,
@@ -57,11 +107,14 @@
       "group_room": "Rooms of 22 + 20 pax",
       "max_group": 80,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=avinyo-10",
-      "notes": "Set menu with shared starters + paella reported by diners."
+      "notes": "Set menu with shared starters + paella reported by diners.",
+      "edenred": "directory"
     },
     {
       "name": "Bun Bo Viêtnam",
-      "cuisine": ["Asian"],
+      "cuisine": [
+        "Asian"
+      ],
       "style": "Vietnamese",
       "area": "Gòtic · by the Cathedral",
       "central": true,
@@ -71,11 +124,14 @@
       "group_room": "Large room, 60 pax",
       "max_group": 60,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bun-bo-vietnam",
-      "notes": "A guide says they don't take reservations — ask about groups specifically."
+      "notes": "A guide says they don't take reservations — ask about groups specifically.",
+      "edenred": "directory"
     },
     {
       "name": "Bollywood",
-      "cuisine": ["Asian"],
+      "cuisine": [
+        "Asian"
+      ],
       "style": "Indian",
       "area": "Raval · Drassanes",
       "central": true,
@@ -85,11 +141,14 @@
       "group_room": "Room of 26 pax",
       "max_group": 98,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=bollywood",
-      "notes": "Lots of pork-free dishes by default."
+      "notes": "Lots of pork-free dishes by default.",
+      "edenred": "directory"
     },
     {
       "name": "Melic del Gòtic",
-      "cuisine": ["Mediterranean"],
+      "cuisine": [
+        "Mediterranean"
+      ],
       "style": "Mediterranean grill",
       "area": "Gòtic · by Urquinaona",
       "central": true,
@@ -99,11 +158,14 @@
       "group_room": "Private rooms, 20–40 pax",
       "max_group": 40,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=melic-del-gotic",
-      "notes": ""
+      "notes": "",
+      "edenred": "directory"
     },
     {
       "name": "El Caliu de l'Eixample",
-      "cuisine": ["Traditional Catalan"],
+      "cuisine": [
+        "Traditional Catalan"
+      ],
       "style": "Catalan & Argentine grill",
       "area": "Eixample · Girona",
       "central": true,
@@ -113,11 +175,14 @@
       "group_room": "Room of 35 pax",
       "max_group": 55,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=caliu-de-l-eixample",
-      "notes": ""
+      "notes": "",
+      "edenred": "directory"
     },
     {
       "name": "Ponsa",
-      "cuisine": ["Traditional Catalan"],
+      "cuisine": [
+        "Traditional Catalan"
+      ],
       "style": "Home-style traditional Catalan",
       "area": "Eixample Esquerre",
       "central": true,
@@ -127,11 +192,15 @@
       "group_room": "Groups up to 30 pax",
       "max_group": 30,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=ponsa",
-      "notes": "Most 'classic Catalan' of the list, slightly above budget."
+      "notes": "Most 'classic Catalan' of the list, slightly above budget.",
+      "edenred": "directory"
     },
     {
       "name": "Taller de Tapas",
-      "cuisine": ["Tapas or sharing plates", "Mediterranean"],
+      "cuisine": [
+        "Tapas or sharing plates",
+        "Mediterranean"
+      ],
       "style": "Tapas, paella",
       "area": "Eixample · Rambla Catalunya",
       "central": true,
@@ -141,7 +210,8 @@
       "group_room": "Private room, 60 pax",
       "max_group": 60,
       "url": "https://www.bcnrestaurantes.com/barcelona.asp?restaurante=taller-de-tapas-rambla",
-      "notes": ""
+      "notes": "",
+      "edenred": "directory"
     }
   ]
 }
