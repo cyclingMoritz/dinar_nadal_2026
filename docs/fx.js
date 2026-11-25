@@ -36,6 +36,26 @@ window.DeckFX = (() => {
       },
     },
 
+    // Summer-night fireflies: slow wandering glows that pulse on and off.
+    fireflies: {
+      init: (W, H) => Array.from({ length: Math.round(Math.min(46, (W * H) / 26000)) }, () => ({
+        x: rand(0, W), y: rand(H * 0.3, H), a: rand(0, 6.3), v: rand(0.15, 0.45), t: rand(0, 6.3), s: rand(0.01, 0.03),
+      })),
+      draw(ctx, flies, W, H) {
+        for (const f of flies) {
+          f.a += rand(-0.08, 0.08); f.t += f.s;
+          f.x += Math.cos(f.a) * f.v; f.y += Math.sin(f.a) * f.v * 0.6;
+          if (f.x < -10) f.x = W + 10; if (f.x > W + 10) f.x = -10;
+          if (f.y < H * 0.2) f.a = Math.abs(f.a); if (f.y > H + 10) f.y = H * 0.4;
+          const glow = Math.max(0, Math.sin(f.t)) ** 2;
+          if (glow < 0.02) continue;
+          const g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, 9);
+          g.addColorStop(0, `rgba(255,236,140,${0.95 * glow})`); g.addColorStop(1, "rgba(255,220,90,0)");
+          ctx.fillStyle = g; ctx.beginPath(); ctx.arc(f.x, f.y, 9, 0, 6.283); ctx.fill();
+        }
+      },
+    },
+
     // Panther: a trail of paw prints crosses the screen every few seconds, then fades.
     paws: {
       init: () => ({ prints: [], nextTrail: 600 }),

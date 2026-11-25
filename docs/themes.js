@@ -1,7 +1,7 @@
 /* Theme registry. A theme page is just <html data-theme="slug"> + ../themes/slug.css.
    Everything that differs in wording or behaviour lives here; looks live in CSS.
-     intro: "dive" (lab-site loader) | "crawl" (opening text crawl) | null
-     fx:    "snow" | "stars" | "paws" | null   (canvas effect from fx.js)
+     intro: "dive" (lab-site loader) | "crawl" (opening text crawl) | "moon" (bike over the moon) | null
+     fx:    "snow" | "stars" | "paws" | "fireflies" | null   (canvas effect from fx.js)
      tiles: 12 short labels for the dive intro's tile burst */
 /* The event's name, in one place (title lines, English name, year). */
 window.DECK_EVENT = { title: ["Dinar", "de Nadal"], en: "Christmas lunch", year: 2026 };
@@ -32,6 +32,14 @@ window.DECK_THEMES = {
     thanks: "for your time. Case closed.",
     intro: "dive", fx: "paws",
     tiles: ["?", "Nº12", "CASE", "XII", "", "03", "✳", "", "15", "€", "?", "BCN"],
+  },
+
+  et: {
+    bar: "Over the moon",
+    kicker: "Over the moon",
+    lede: "The earthlings have answered. Here’s what they asked for, and where we could go.",
+    thanks: "for your time. Lunch, phone home.",
+    intro: "moon", fx: "fireflies",
   },
 
   starwars: {

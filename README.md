@@ -10,9 +10,9 @@ data/restaurants.json      hand-curated candidates (Ticket Restaurant + group me
 pipeline/process.py        CSV → docs/data/summary.json (aggregates only, no names)
 docs/                      the site = GitHub Pages root
   index.html               lab theme (default); other themes live in docs/<theme>/index.html
-  deck.js                  builds chrome + slides, navigation, intros (dive / crawl)
+  deck.js                  builds chrome + slides, navigation, intros (dive / crawl / moon)
   themes.js                every theme's wording, intro type, canvas effect, intro tiles
-  fx.js                    canvas effects (snow, stars, paws), loaded only when a theme uses one
+  fx.js                    canvas effects (snow, stars, paws, fireflies), loaded only when a theme uses one
   style.css                base look (lab site: black/white, EB Garamond + Roboto Mono)
   themes/<theme>.css       per-theme skin + its SVG artwork
 extras/music-box.js        original Web Audio waltz, parked (not deployed)
@@ -26,6 +26,7 @@ extras/music-box.js        original Web Audio waltz, parked (not deployed)
 | `/burton/` | Halloween is over — moonlit gothic, spiral hill, snow |
 | `/pinkpanther/` | Case file Nº 12 — pink 60s detective caper, paw prints |
 | `/starwars/` | Episode XII — opening crawl, starfield, desert planet |
+| `/et/` | Over the moon — bike flying across a full moon, pines, fireflies |
 
 All artwork and wording is original (no film characters, logos or music).
 To add a theme: add an entry to `docs/themes.js`, a `docs/themes/<slug>.css`, and copy

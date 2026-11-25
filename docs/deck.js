@@ -27,6 +27,7 @@
       <div class="intro-text"><p>CREATIVE<br>INTELL<span class="intro-stem">I</span>GENCE<br>LAB</p></div>
       <div class="intro-gallery">${(T.tiles || []).map((t) => `<i>${esc(t)}</i>`).join("")}</div>`,
     crawl: () => `<p class="crawl-skip">Click or press any key to skip</p>`, // filled once data arrives
+    moon: () => `<div class="moon-disk"></div><img class="moon-bike" src="${ROOT}themes/bike.svg" alt=""><div class="moon-pines"></div>`,
   };
   document.title = T.bar ? `${EVENT} · ${T.bar}` : EVENT;
   document.body.insertAdjacentHTML("afterbegin", `
@@ -306,6 +307,29 @@
     finish(anim(intro, [{ opacity: 1 }, { opacity: 0 }], { duration: 900, delay: PRE + 1300 + CRAWL - 900 }));
   }
 
+  // Moon flight: a full moon rises over the pines, a bike flies across it, then the window opens.
+  function runMoon() {
+    const disk = intro.querySelector(".moon-disk"), bike = intro.querySelector(".moon-bike"), pines = intro.querySelector(".moon-pines");
+    const RISE = 1400, FLY0 = 900, FLY = 3000, OPEN = FLY0 + FLY - 300;
+    anim(disk, [{ transform: "translate(-50%,-38%) scale(.82)", opacity: 0 }, { transform: "translate(-50%,-50%) scale(1)", opacity: 1 }],
+      { duration: RISE, easing: "cubic-bezier(.2,.7,.2,1)" });
+    anim(pines, [{ transform: "translateY(40%)" }, { transform: "translateY(0)" }], { duration: RISE, easing: "cubic-bezier(.2,.7,.2,1)" });
+    // Arc from bottom-left, across the face of the moon, up and out to the top-right.
+    anim(bike, [
+      { transform: "translate(-50%,-50%) translate(-62vw, 26vh) rotate(-4deg) scale(.8)" },
+      { transform: "translate(-50%,-50%) translate(-2vw, -1vh) rotate(-9deg) scale(1)", offset: 0.5 },
+      { transform: "translate(-50%,-50%) translate(62vw, -42vh) rotate(-16deg) scale(.7)" },
+    ], { duration: FLY, delay: FLY0, easing: "cubic-bezier(.35,.15,.65,.85)", fill: "both" });
+    const hole = (m) => `polygon(0% 0%, 0% 100%, ${m}% 100%, ${m}% ${m}%, ${100 - m}% ${m}%, ${100 - m}% ${100 - m}%, ${m}% ${100 - m}%, ${m}% 100%, 100% 100%, 100% 0%)`;
+    const EASE = "cubic-bezier(.165,.84,.44,1)";
+    const first = document.querySelector(".slide.active .inner");
+    if (first) {
+      anim(first, [{ transform: "scale(.6)" }, { transform: "scale(1)" }], { duration: 1500, delay: OPEN, easing: EASE, fill: "both" });
+      anim(first, [{ opacity: 0 }, { opacity: 1 }], { duration: 100, delay: OPEN, fill: "both" });
+    }
+    finish(anim(intro, [{ clipPath: hole(70) }, { clipPath: hole(100) }], { duration: 500, delay: OPEN, easing: EASE }));
+  }
+
   /* ---------- canvas effect (loaded only if the theme has one) ---------- */
   if (T.fx && !REDUCED) {
     const s = Object.assign(document.createElement("script"), { src: `${ROOT}fx.js` });
@@ -328,7 +352,8 @@
       go(Number.isFinite(h) ? h - 1 : 0);
       if (skipIntro) return;
       // Start once the web font is in (so the dive hits the letter stem) and slide 1 exists.
-      fontsIn.then(() => (T.intro === "crawl" ? runCrawl(data) : runDive()));
+      const run = { dive: runDive, crawl: () => runCrawl(data), moon: runMoon }[T.intro];
+      fontsIn.then(() => run?.());
     })
     .catch((err) => {
       endIntro();

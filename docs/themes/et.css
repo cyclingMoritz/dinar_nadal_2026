@@ -1,0 +1,67 @@
+/* "Over the moon" — an 80s suburban-night skin: a giant full moon with a kid on a bike
+   flying across it, a pine-forest treeline, fireflies (fx) and porch-light paper slides.
+   Original artwork: no film characters, studio logos or stills. */
+:root[data-theme="et"] {
+  --night: #0b1430;
+  --dusk: #1d2a5c;
+  --moon: #f6f1d8;
+  --torch: #ffd66b;   /* flashlight yellow */
+  --hoodie: #c8312f;  /* red hoodie */
+  --porch: #f3e6cb;
+}
+
+[data-theme="et"] body { background: var(--night); color: var(--moon); }
+
+/* Dark slides: night sky fading to the treeline */
+[data-theme="et"] .slide {
+  --fg: var(--moon); --bg: var(--night);
+  --muted: rgba(246, 241, 216, .6); --rule: rgba(246, 241, 216, .18); --bar-dim: rgba(246, 241, 216, .32);
+  --accent: var(--torch);
+  background:
+    url("pines.svg") center bottom / 100% min(22vh, 200px) no-repeat,
+    radial-gradient(ellipse 80vw 50vh at 50% 100%, rgba(80,110,190,.28), transparent 70%),
+    linear-gradient(var(--night), var(--dusk));
+}
+/* Light slides: warm porch-light paper */
+[data-theme="et"] .slide.light {
+  --fg: #1a1422; --bg: var(--porch);
+  --muted: rgba(26, 20, 34, .62); --rule: rgba(26, 20, 34, .18); --bar-dim: rgba(26, 20, 34, .24);
+  --accent: var(--hoodie);
+  background: radial-gradient(ellipse 70vw 60vh at 85% 0%, rgba(255,214,107,.35), transparent 70%), var(--porch);
+}
+[data-theme="et"] body[data-slide="light"] #fx { opacity: 0; }   /* fireflies only come out at night */
+[data-theme="et"] #fx { transition: opacity .6s; }
+
+/* Title slide: the bike crossing the moon, top right */
+[data-theme="et"] .slide .inner { position: relative; z-index: 1; }
+[data-theme="et"] .slide.title::before {
+  content: ""; position: absolute; right: 7vw; top: 9vh;
+  width: min(44vmin, 420px); aspect-ratio: 1; border-radius: 50%;
+  background:
+    url("bike.svg") 52% 56% / 76% auto no-repeat,
+    radial-gradient(circle, #fffbea 0 58%, #ece3bd 70.5%, transparent 71%);
+  box-shadow: 0 0 80px 18px rgba(246,241,216,.18);
+  transform: rotate(-8deg);
+}
+[data-theme="et"] .title .mega { text-shadow: 0 0 40px rgba(246,241,216,.25); }
+[data-theme="et"] .kicker { color: var(--accent); }
+[data-theme="et"] .rank { color: var(--accent); }
+[data-theme="et"] .chart .fill { border-radius: 0 999px 999px 0; }
+[data-theme="et"] .slide:not(.light) .chart li.top .fill { box-shadow: 0 0 14px -2px var(--torch); }
+
+/* ---------- moon-flight intro ---------- */
+[data-theme="et"] #intro { background: linear-gradient(var(--night), var(--dusk)); }
+.moon-disk {
+  position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%);
+  width: min(78vmin, 760px); aspect-ratio: 1; border-radius: 50%; opacity: 0;
+  background: radial-gradient(circle at 46% 44%, #fffdf0 0 52%, #f1e9c6 64%, #e2d7a8 70%);
+  box-shadow: 0 0 120px 30px rgba(246,241,216,.22);
+}
+.moon-bike {
+  position: absolute; left: 50%; top: 46%; width: min(46vmin, 440px);
+  transform: translate(-50%,-50%) translate(-62vw, 26vh);
+}
+.moon-pines {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 26vh;
+  background: url("pines.svg") center bottom / 100% 100% no-repeat;
+}
