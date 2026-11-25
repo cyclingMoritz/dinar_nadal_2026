@@ -27,6 +27,7 @@ extras/music-box.js        original Web Audio waltz, parked (not deployed)
 | `/pinkpanther/` | Case file Nº 12 — pink 60s detective caper, paw prints |
 | `/starwars/` | Episode XII — opening crawl, starfield, desert planet |
 | `/et/` | Over the moon — bike flying across a full moon, pines, fireflies |
+| `/random/` | Opens one of the themes above at random (never the same one twice in a row; keeps `#slide`) |
 
 All artwork and wording is original (no film characters, logos or music).
 To add a theme: add an entry to `docs/themes.js`, a `docs/themes/<slug>.css`, and copy

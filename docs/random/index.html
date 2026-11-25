@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dinar de Nadal 2026</title>
+  <meta name="robots" content="noindex">
+  <style>
+    html, body { height: 100%; margin: 0; background: #000; color: #fff; }
+    body { display: grid; place-items: center; font: 500 11px/1.4 "Roboto Mono", ui-monospace, monospace; letter-spacing: .08em; text-transform: uppercase; }
+    a { color: inherit; }
+  </style>
+  <script src="../themes.js"></script>
+  <script>
+    /* Picks one of the themes registered in themes.js at random and opens it.
+       Avoids repeating the theme you saw last time; keeps any #slide in the URL. */
+    (() => {
+      const themes = Object.keys(window.DECK_THEMES || { lab: 1 });
+      let last = null;
+      try { last = sessionStorage.getItem("deck-random-last"); } catch { /* storage blocked */ }
+      const pool = themes.length > 1 ? themes.filter((t) => t !== last) : themes;
+      const pick = pool[Math.floor(Math.random() * pool.length)];
+      try { sessionStorage.setItem("deck-random-last", pick); } catch { /* storage blocked */ }
+      location.replace(`${pick === "lab" ? "../" : `../${pick}/`}${location.hash}`);
+    })();
+  </script>
+</head>
+<body>
+  <noscript><a href="../">Open the presentation</a></noscript>
+</body>
+</html>
